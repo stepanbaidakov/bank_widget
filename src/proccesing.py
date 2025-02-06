@@ -2,7 +2,8 @@ from typing import Optional
 
 
 def filter_by_state(list_dictionary: list[dict], state: Optional[str] = "EXECUTED") -> list[dict]:
-    """Возвращает новый список словарей, содержащий только те словари, у которых ключ state соответствует указанному значению."""
+    """Возвращает новый список словарей, содержащий только те словари, у которых ключ state соответствует указанному
+    значению."""
     new_list = []
     for dictionary in list_dictionary:
         if dictionary["state"] == state:
@@ -10,7 +11,7 @@ def filter_by_state(list_dictionary: list[dict], state: Optional[str] = "EXECUTE
     return new_list
 
 
-def sort_by_date(list_dictionary: list[dict], sorting: bool =True) -> list[dict]:
+def sort_by_date(list_dictionary: list[dict], sorting: bool = True) -> list[dict]:
     """Возвращает новый список отсортированный по дате"""
     sorted_list = sorted(list_dictionary, key=lambda date: date.get("date"), reverse=sorting)
     return sorted_list
