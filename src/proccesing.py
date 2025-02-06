@@ -9,7 +9,6 @@ def filter_by_state(list_dictionary: list[dict], state: Optional[str] = "EXECUTE
             new_list.append(dictionary)
     return new_list
 
-print("")
 
 def sort_by_date(list_dictionary: list[dict], sorting: bool =True) -> list[dict]:
     """Возващает новый список отсортированный по дате"""
