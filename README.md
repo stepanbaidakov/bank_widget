@@ -8,6 +8,11 @@
 `git clone https://github.com/username/bank_widget.git`
 2. Установка зависимости:
 `pip install -r requirements.text`
+## Тестирование
+1. Установка pytest:
+`poetry add --group dev pytest`
+2. Запуск тестов:
+`pytest <file_name>`
 ## Использование
 ## Документация
 Для полученя дополнительной информации, обратитесь к [документации]()
