@@ -1,6 +1,5 @@
 import pytest
 from src.widget import mask_account_card, get_date
-from tests.conftest import date_string
 
 @pytest.mark.parametrize(
     "number, masked_number",
