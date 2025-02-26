@@ -173,3 +173,4 @@ cython_debug/
 .pypirc
 __pycache__
 .flake8
+log.txt
