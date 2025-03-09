@@ -10,13 +10,13 @@ file_handler = logging.FileHandler(log_path, "w", encoding="utf-8")
 file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 transactions_logger.addHandler(file_handler)
-transactions_logger.setLevel(logging.INFO)
+transactions_logger.setLevel(logging.DEBUG)
 
 
 def get_transactions(my_path: str) -> list[dict]:
     """Возвращает список словарей с данными о финансовых транзакциях"""
     if not os.path.exists(my_path):
-        transactions_logger.warning(f"Указанного пути не существует.")
+        transactions_logger.error(f"Указанного пути не существует.")
         return []
 
     with open(my_path, "r", encoding="utf-8") as file:
@@ -25,7 +25,7 @@ def get_transactions(my_path: str) -> list[dict]:
         transactions_logger.info(f"Файл содержит список, трансакции обрабатываются")
         return data
     else:
-        transactions_logger.warning(f"Файл содержит не список")
+        transactions_logger.error(f"Файл содержит не список")
         return []
 
 

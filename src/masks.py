@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(filename)s %(levelname)s: %(message)s',
                     filename="../logs/.log",
                     filemode='w', encoding="utf-8")
@@ -29,5 +29,5 @@ def get_mask_account(account_number: int) -> str:
         masked_number = f"**{account_number_str[-4:]}"
         return masked_number
     else:
-        mask_account_logger.warning(f"Номер счета не был указан")
+        mask_account_logger.error(f"Номер счета не был указан")
         return ""
