@@ -9,14 +9,20 @@ def test_get_mask_card_number(card_number):
 
 @pytest.mark.parametrize(
     "number, masked_card_number",
-    [("l;ajf;ljf;lafj;lajf;ajf", "l;aj f;** **** ;ajf"), (19084971409719048107497937174010197907510978791087, "1908 49** **** 1087"), (8126486, "8126 48** **** 6486")],
+    [
+        ("l;ajf;ljf;lafj;lajf;ajf", "l;aj f;** **** ;ajf"),
+        (19084971409719048107497937174010197907510978791087, "1908 49** **** 1087"),
+        (8126486, "8126 48** **** 6486"),
+    ],
 )
 def test_get_mask_card_number_different(number, masked_card_number):
     assert get_mask_card_number(number) == masked_card_number
 
+
 @pytest.mark.parametrize("number, masked_card_number", [("", "")])
 def test_get_mask_card_number_empty(number, masked_card_number):
     assert get_mask_card_number(number) == masked_card_number
+
 
 def test_get_mask_account_number(account_number):
     assert get_mask_account(account_number) == "**4305"
