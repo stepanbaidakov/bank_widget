@@ -16,16 +16,16 @@ transactions_logger.setLevel(logging.DEBUG)
 def get_transactions(my_path: str) -> list[dict]:
     """Возвращает список словарей с данными о финансовых транзакциях"""
     if not os.path.exists(my_path):
-        transactions_logger.error(f"Указанного пути не существует.")
+        transactions_logger.error("Указанного пути не существует.")
         return []
 
     with open(my_path, "r", encoding="utf-8") as file:
         data = json.load(file)
     if isinstance(data, list):
-        transactions_logger.info(f"Файл содержит список, трансакции обрабатываются")
+        transactions_logger.info("Файл содержит список, трансакции обрабатываются")
         return data
     else:
-        transactions_logger.error(f"Файл содержит не список")
+        transactions_logger.error("Файл содержит не список")
         return []
 
 
@@ -35,7 +35,7 @@ def get_transactions(my_path: str) -> list[dict]:
 
 # print(get_transactions(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))), "operations.json")
 # print(get_transactions("../data/operations.json"))
-
-print(get_transactions(os.path.join(DATA_DIR, "operations.json")))
+if __name__ == "__main__":
+    print(get_transactions(os.path.join(DATA_DIR, "operations.json")))
 # print(base_dir)
 # print(get_transactions(base_dir))

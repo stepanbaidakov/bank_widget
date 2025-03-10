@@ -1,4 +1,3 @@
-
 import pytest
 from mypy.state import state
 

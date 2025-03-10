@@ -1,6 +1,6 @@
 import os.path
 
-from src.decorators import divide, log
+from src.decorators import log
 
 
 def test_log_outprint_correct(capsys):
@@ -26,27 +26,6 @@ def test_log_outprint_wrong(capsys):
 @log("log.txt")
 def divide(a, b):
     return a / b
-
-
-# def test_log_print_in_file_error1():
-#     log_file = os.path.join(os.getcwd(), "log.txt")
-#
-#     if os.path.exists(log_file):
-#         os.remove(log_file)
-#
-#     divide_wrong()
-#
-#     with open(log_file, "r") as file:
-#         content = file.read()
-#
-#     assert "divide error: <class 'ZeroDivisionError'>. Inputs: (5, 0),{}" in content
-
-# with open(log_file, "r", encoding="utf-8") as file:
-#     content = file.read()
-#     print("🔎 Содержимое файла:", content)
-
-# divide(5, 0)
-# assert os.path.exists(log_file), "Файл  не был создан!"
 
 
 def test_log_print_in_file_correct():
