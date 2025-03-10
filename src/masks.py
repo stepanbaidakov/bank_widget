@@ -1,8 +1,11 @@
 import logging
+import os.path
+
+from config import LOGS_DIR
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(filename)s %(levelname)s: %(message)s',
-                    filename="../logs/.log",
+                    filename=os.path.join(LOGS_DIR, "masks.log"),
                     filemode='w', encoding="utf-8")
 mask_card_number_logger = logging.getLogger("app.mask_card_number")
 mask_account_logger = logging.getLogger("app.mask_account")

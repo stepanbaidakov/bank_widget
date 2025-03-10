@@ -43,13 +43,7 @@ def test_get_transaction_amount_usd(mock_get):
             "from": "Maestro 1596837868705199",
             "to": "Счет 64686473678894779589",
         }
-    ) == {
-        "success": True,
-        "query": {"from": "USD", "to": "RUB", "amount": 31957.58},
-        "info": {"timestamp": 1741217344, "rate": 90.399577},
-        "date": "2025-03-05",
-        "result": 2888951.713944,
-    }
+    ) == 2888951.713944
     mock_get.assert_called_once_with(
         f"https://api.apilayer.com/exchangerates_data/convert?to={"RUB"}&from=USD&amount=31957.58",
         {"apikey": "iNriqtj5Chhjx24mCiWW7ArTa56l5n46"},
@@ -63,7 +57,7 @@ def test_get_transactions_amount_eur(mock_get):
         "query": {"from": "EUR", "to": "RUB", "amount": 31957.58},
         "info": {"timestamp": 1741217344, "rate": 90.399577},
         "date": "2025-03-05",
-        "result": 2888951.713944,
+        "result": 3163530.346491,
     }
     assert get_transaction_amount(
         {
@@ -75,13 +69,7 @@ def test_get_transactions_amount_eur(mock_get):
             "from": "Maestro 1596837868705199",
             "to": "Счет 64686473678894779589",
         }
-    ) == {
-        "success": True,
-        "query": {"from": "EUR", "to": "RUB", "amount": 31957.58},
-        "info": {"timestamp": 1741217344, "rate": 90.399577},
-        "date": "2025-03-05",
-        "result": 2888951.713944,
-    }
+    ) == 3163530.346491
     mock_get.assert_called_once_with(
         f"https://api.apilayer.com/exchangerates_data/convert?to={"RUB"}&from=EUR&amount=31957.58",
         {"apikey": "iNriqtj5Chhjx24mCiWW7ArTa56l5n46"},

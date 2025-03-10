@@ -2,9 +2,9 @@ import json
 import logging
 import os
 
-from config import base_dir
+from config import DATA_DIR, LOGS_DIR
 
-log_path = os.path.join(os.path.dirname(os.getcwd()), "logs\\.log")
+log_path = os.path.join(LOGS_DIR, "utils.log")
 transactions_logger = logging.Logger(__name__)
 file_handler = logging.FileHandler(log_path, "w", encoding="utf-8")
 file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
@@ -36,6 +36,6 @@ def get_transactions(my_path: str) -> list[dict]:
 # print(get_transactions(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))), "operations.json")
 # print(get_transactions("../data/operations.json"))
 
-print(get_transactions(os.path.abspath("../data/test_operation_wrong.json")))
+print(get_transactions(os.path.join(DATA_DIR, "operations.json")))
 # print(base_dir)
 # print(get_transactions(base_dir))

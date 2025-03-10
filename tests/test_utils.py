@@ -4,12 +4,14 @@ import pytest
 
 from src.utils import get_transactions
 
+from config import DATA_DIR
+
 
 @pytest.mark.parametrize(
     "path, expected",
     [
         (
-            os.path.abspath("../data/test_operation.json"),
+            os.path.join(DATA_DIR, "test_operation.json"),
             [
                 {
                     "id": 441945886,
@@ -23,7 +25,7 @@ from src.utils import get_transactions
             ],
         ),
         ("test_operation.json", []),
-        (os.path.abspath("../data/test_operation_wrong.json"), []),
+        (os.path.join(DATA_DIR, "test_operation_wrong.json"), []),
     ],
 )
 def test_get_transactions(path, expected):

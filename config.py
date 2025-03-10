@@ -1,5 +1,7 @@
 import os
 
-base_dir = os.path.join(os.getcwd(), "logs", ".log")
+ROOT_DIR = os.path.dirname(__file__)
+DATA_DIR = os.path.join(ROOT_DIR, 'data')
+LOGS_DIR = os.path.join(ROOT_DIR, 'logs')
 if __name__ == "__main__":
-    print(base_dir)
+    print(DATA_DIR)
