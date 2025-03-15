@@ -1,5 +1,6 @@
 from src.masks import get_mask_account, get_mask_card_number
 
+
 def mask_account_card(client_info: str) -> str:
     """Обрабатывает информацию о картах и счетах"""
 
@@ -17,11 +18,10 @@ def mask_account_card(client_info: str) -> str:
                 else:
                     masked_number = get_mask_card_number(int(part))
             if part.isalpha():
-                    words.append(part)
+                words.append(part)
         card_type = " ".join(words)
         masked_client_info = f"{card_type} {masked_number}"
         return masked_client_info
-
 
 
 def get_date(date: str) -> str:
@@ -34,6 +34,7 @@ def get_date(date: str) -> str:
     else:
         correct_date = f"{date[8:10]}.{date[5:7]}.{date[:4]}"
         return correct_date
+
 
 # def masked_account_card(client_info: str):
 #     splited = client_info.split(" ")

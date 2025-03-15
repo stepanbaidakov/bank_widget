@@ -23,11 +23,3 @@ def log(filename=None):
         return inner
 
     return wrapper
-
-
-@log("log.txt")
-def divide(a, b):
-    return a / b
-
-
-divide(5, 2)

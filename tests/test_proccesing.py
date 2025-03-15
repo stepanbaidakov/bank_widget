@@ -1,5 +1,3 @@
-from pickle import FALSE
-
 import pytest
 from mypy.state import state
 
