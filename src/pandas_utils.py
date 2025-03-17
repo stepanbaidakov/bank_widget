@@ -13,6 +13,7 @@ transactions_logger.setLevel(logging.DEBUG)
 
 
 def get_transactions_csv(path):
+    """Функция, которая принимает на вход путь до csv-файла и возвращает список словарей с данными о финансовых транзакциях"""
     if not os.path.exists(path):
         transactions_logger.error("Указанного пути не существует.")
         return []
@@ -28,6 +29,7 @@ def get_transactions_csv(path):
 
 
 def get_transactions_exel_csv(path):
+    """Функция, которая принимает на вход путь до xlsx-файла и возвращает список словарей с данными о финансовых транзакциях"""
     if not os.path.exists(path):
         transactions_logger.error("Указанного пути не существует.")
         return []
