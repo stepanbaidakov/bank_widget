@@ -106,7 +106,7 @@ from src.generators import card_number_generator, filter_by_currency, transactio
                     "to": "Счет 14211924144426031657",
                 },
             ],
-            "руб.",
+            "RUB",
             [
                 {
                     "id": 873106923,
@@ -217,7 +217,7 @@ def test_transaction_descriptions(transactions, descriptions):
 
 def test_transaction_descriptions_empty(empty_list):
     generator = transaction_descriptions(empty_list)
-    assert next(generator) == "Описание отсутсвует"
+    assert next(generator) == "Описание отсутствует"
 
 
 @pytest.mark.parametrize(
